@@ -1,6 +1,6 @@
-# LibWallet MNZ
+# LibWallet
 
-Multi-crypto library created for MNZ-Wallet and internal MNZ tools/backends
+Multi-crypto library for wallets.
 
 #### Build Setup
 
@@ -17,14 +17,7 @@ yarn test
 
 #### Contributions
 
-If you find a bug or you want to propose a feature, you should create a issue on this repo. (example: ```fix|feat(scope): Issue```)
-
-Built with ♥️ by the MNZ team
-
-
-## MNZ White Paper
-
-The latest white paper is [right here](https://monaize.com/assets/pdf/monaize_whitepaper.pdf).
+If you find a bug or you want to propose a feature, you should create a issue on this repo.
 
 #### Software license
 

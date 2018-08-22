@@ -9,7 +9,7 @@ const coins = [
     explorer: 'https://insight.bitpay.com',
     electrum: [
       {
-        host: 'erbium1.sytes.net', port: 50001, mode: 'tcp',
+        host: 'btc.electrum.monaize.com', port: 10000, mode: 'tcp',
       },
     ],
   },
@@ -34,7 +34,7 @@ const coins = [
     explorer: 'https://kmd.explorer.supernet.org',
     electrum: [
       {
-        host: 'electrum2.cipig.net', port: 10001, mode: 'tcp',
+        host: 'kmd.electrum.monaize.com', port: 10001, mode: 'tcp',
       },
     ],
   },

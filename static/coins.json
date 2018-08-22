@@ -1,111 +1,136 @@
-const bitcoinjs = require("./bitcoinjs-lib");
-
-const coins = [
+[
   {
-    ticker: "BTC",
-    name: "bitcoin",
-    network: bitcoinjs.networks.bitcoin,
-    path: "m/44'/0'/0'",
-    explorer: "https://insight.bitpay.com",
-    electrum: [
-      {
-        host: "electrum.hsmiths.com", port: 50001, mode: "tcp",
+    "ticker": "BTC",
+    "name": "bitcoin",
+    "network": {
+      "messagePrefix": "\u0018Bitcoin Signed Message:\n",
+      "bech32": "bc",
+      "bip32": {
+        "public": 76067358,
+        "private": 76066276
       },
+      "pubKeyHash": 0,
+      "scriptHash": 5,
+      "wif": 128
+    },
+    "path": "m/44'/0'",
+    "electrum": [
       {
-        host: "helicarrier.bauerj.eu", port: 50001, mode: "tcp",
-      },
-    ],
-  },
-  {
-    ticker: "TESTBTC",
-    name: "bitcoin",
-    network: bitcoinjs.networks.testnet,
-    path: "m/44'/0'/0'",
-    explorer: "https://test-insight.bitpay.com",
-    electrum: [
-      {
-        host: "test-btc.electrum.monaize.com", port: 10000, mode: "tcp",
-      },
-    ],
-  },
-  {
-    ticker: "KMD",
-    name: "komodo",
-    network: bitcoinjs.networks.komodo,
-    fee: 10000,
-    path: "m/44'/141'/0'",
-    explorer: "https://kmd.explorer.supernet.org",
-    electrum: [
-      {
-        host: "electrum1.cipig.net", port: 10001, mode: "tcp",
-      },
-      {
-        host: "electrum2.cipig.net", port: 10001, mode: "tcp",
-      },
-    ],
-  },
-  {
-    ticker: "TESTKMD",
-    name: "komodo",
-    network: bitcoinjs.networks.komodo,
-    path: "m/44'/141'/0'",
-    fee: 10000,
-    explorer: "https://kmd.explorer.monaize.com",
-    electrum: [
-      {
-        host: "test-ac.electrum.monaize.com", port: 10001, mode: "tcp",
-      },
-    ],
-  },
-  {
-    ticker: "MNZ",
-    name: "monaize",
-    network: bitcoinjs.networks.monaize,
-    path: "m/44'/141'/0'",
-    fee: 0,
-    explorer: "https://www.mnzexplorer.com/",
-    electrum: [
-      {
-        host: "mnz.electrum.monaize.com", port: 10002, mode: "tcp",
-      },
-    ],
-  },
-  {
-    ticker: "TESTMNZ",
-    name: "monaize",
-    network: bitcoinjs.networks.monaize,
-    path: "m/44'/141'/0'",
-    fee: 0,
-    explorer: "https://mnz.explorer.monaize.com",
-    electrum: [
-      {
-        host: "test-ac.electrum.monaize.com", port: 10002, mode: "tcp",
-      },
-    ],
-  },
-  {
-    ticker: "OOT",
-    name: "utrum",
-    network: bitcoinjs.networks.utrum,
-    path: "m/44'/141'/0'",
-    fee: 0,
-    explorer: "https://explorer.utrum.io/",
-    electrum: [
-      {
-        host: "electrum1.utrum.io", port: 10088, mode: "tcp",
-      },
-      {
-        host: "electrum2.utrum.io", port: 10088, mode: "tcp",
+        "host": "node1.komodo.rocks",
+        "port": 50001,
+        "mode": "tcp"
       }
-    ],
+    ]
+  },
+  {
+    "ticker": "TESTBTC",
+    "name": "bitcoin",
+    "network": {
+      "messagePrefix": "\u0018Bitcoin Signed Message:\n",
+      "bech32": "tb",
+      "bip32": {
+        "public": 70617039,
+        "private": 70615956
+      },
+      "pubKeyHash": 111,
+      "scriptHash": 196,
+      "wif": 239
+    },
+    "path": "m/44'/0'",
+    "electrum": [
+      {
+        "host": "51.15.82.29",
+        "port": 50000,
+        "mode": "tcp"
+      }
+    ]
+  },
+  {
+    "ticker": "KMD",
+    "name": "komodo",
+    "network": {
+      "messagePrefix": "\u0018Komodo Signed Message:\n",
+      "bip32": {
+        "public": 76067358,
+        "private": 76066276
+      },
+      "pubKeyHash": 60,
+      "scriptHash": 85,
+      "wif": 188
+    },
+    "path": "m/44'/141'",
+    "electrum": [
+      {
+        "host": "electrum2.cipig.net",
+        "port": 10001,
+        "mode": "tcp"
+      }
+    ]
+  },
+  {
+    "ticker": "TESTKMD",
+    "name": "komodo",
+    "network": {
+      "messagePrefix": "\u0018Komodo Signed Message:\n",
+      "bip32": {
+        "public": 76067358,
+        "private": 76066276
+      },
+      "pubKeyHash": 60,
+      "scriptHash": 85,
+      "wif": 188
+    },
+    "path": "m/44'/141'",
+    "electrum": [
+      {
+        "host": "51.15.54.2",
+        "port": 50012,
+        "mode": "tcp"
+      }
+    ]
+  },
+  {
+    "ticker": "MNZ",
+    "name": "monaize",
+    "network": {
+      "messagePrefix": "\u0018Monaize Signed Message:\n",
+      "bip32": {
+        "public": 76067358,
+        "private": 76066276
+      },
+      "pubKeyHash": 60,
+      "scriptHash": 85,
+      "wif": 188
+    },
+    "path": "m/44'/141'",
+    "electrum": [
+      {
+        "host": "electrum2.cipig.net",
+        "port": 10002,
+        "mode": "tcp"
+      }
+    ]
+  },
+  {
+    "ticker": "TESTMNZ",
+    "name": "monaize",
+    "network": {
+      "messagePrefix": "\u0018Monaize Signed Message:\n",
+      "bip32": {
+        "public": 76067358,
+        "private": 76066276
+      },
+      "pubKeyHash": 60,
+      "scriptHash": 85,
+      "wif": 188
+    },
+    "path": "m/44'/141'",
+    "electrum": [
+      {
+        "host": "51.15.54.2",
+        "port": 50002,
+        "mode": "tcp"
+      }
+    ]
   }
-];
-
-function getCoin(coin) {
-  return coins.find(el => el.name === coin || el.ticker === coin);
-}
-
-module.exports = {
-  get: getCoin,
-  all: coins,
-};
+]
