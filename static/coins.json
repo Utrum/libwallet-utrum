@@ -1,101 +1,101 @@
-const bitcoinjs = require('./bitcoinjs-lib');
+const bitcoinjs = require("./bitcoinjs-lib");
 
 const coins = [
   {
-    ticker: 'BTC',
-    name: 'bitcoin',
+    ticker: "BTC",
+    name: "bitcoin",
     network: bitcoinjs.networks.bitcoin,
     path: "m/44'/0'/0'",
-    explorer: 'https://insight.bitpay.com',
+    explorer: "https://insight.bitpay.com",
     electrum: [
       {
-        host: 'electrum.hsmiths.com', port: 50001, mode: 'tcp',
+        host: "electrum.hsmiths.com", port: 50001, mode: "tcp",
       },
       {
-        host: 'helicarrier.bauerj.eu', port: 50001, mode: 'tcp',
+        host: "helicarrier.bauerj.eu", port: 50001, mode: "tcp",
       },
     ],
   },
   {
-    ticker: 'TESTBTC',
-    name: 'bitcoin',
+    ticker: "TESTBTC",
+    name: "bitcoin",
     network: bitcoinjs.networks.testnet,
     path: "m/44'/0'/0'",
-    explorer: 'https://test-insight.bitpay.com',
+    explorer: "https://test-insight.bitpay.com",
     electrum: [
       {
-        host: 'test-btc.electrum.monaize.com', port: 10000, mode: 'tcp',
+        host: "test-btc.electrum.monaize.com", port: 10000, mode: "tcp",
       },
     ],
   },
   {
-    ticker: 'KMD',
-    name: 'komodo',
+    ticker: "KMD",
+    name: "komodo",
     network: bitcoinjs.networks.komodo,
     fee: 10000,
     path: "m/44'/141'/0'",
-    explorer: 'https://kmd.explorer.supernet.org',
+    explorer: "https://kmd.explorer.supernet.org",
     electrum: [
       {
-        host: 'electrum1.cipig.net', port: 10001, mode: 'tcp',
+        host: "electrum1.cipig.net", port: 10001, mode: "tcp",
       },
       {
-        host: 'electrum2.cipig.net', port: 10001, mode: 'tcp',
+        host: "electrum2.cipig.net", port: 10001, mode: "tcp",
       },
     ],
   },
   {
-    ticker: 'TESTKMD',
-    name: 'komodo',
+    ticker: "TESTKMD",
+    name: "komodo",
     network: bitcoinjs.networks.komodo,
     path: "m/44'/141'/0'",
     fee: 10000,
-    explorer: 'https://kmd.explorer.monaize.com',
+    explorer: "https://kmd.explorer.monaize.com",
     electrum: [
       {
-        host: 'test-ac.electrum.monaize.com', port: 10001, mode: 'tcp',
+        host: "test-ac.electrum.monaize.com", port: 10001, mode: "tcp",
       },
     ],
   },
   {
-    ticker: 'MNZ',
-    name: 'monaize',
+    ticker: "MNZ",
+    name: "monaize",
     network: bitcoinjs.networks.monaize,
     path: "m/44'/141'/0'",
     fee: 0,
-    explorer: 'https://www.mnzexplorer.com/',
+    explorer: "https://www.mnzexplorer.com/",
     electrum: [
       {
-        host: 'mnz.electrum.monaize.com', port: 10002, mode: 'tcp',
+        host: "mnz.electrum.monaize.com", port: 10002, mode: "tcp",
       },
     ],
   },
   {
-    ticker: 'TESTMNZ',
-    name: 'monaize',
+    ticker: "TESTMNZ",
+    name: "monaize",
     network: bitcoinjs.networks.monaize,
     path: "m/44'/141'/0'",
     fee: 0,
-    explorer: 'https://mnz.explorer.monaize.com',
+    explorer: "https://mnz.explorer.monaize.com",
     electrum: [
       {
-        host: 'test-ac.electrum.monaize.com', port: 10002, mode: 'tcp',
+        host: "test-ac.electrum.monaize.com", port: 10002, mode: "tcp",
       },
     ],
   },
   {
-    ticker: 'OOT',
-    name: 'utrum',
+    ticker: "OOT",
+    name: "utrum",
     network: bitcoinjs.networks.utrum,
     path: "m/44'/141'/0'",
     fee: 0,
-    explorer: 'https://explorer.utrum.io/',
+    explorer: "https://explorer.utrum.io/",
     electrum: [
       {
-        host: 'electrum1.utrum.io', port: 10088, mode: 'tcp'
+        host: "electrum1.utrum.io", port: 10088, mode: "tcp",
       },
       {
-        host: 'electrum2.utrum.io', port: 10088, mode: 'tcp'
+        host: "electrum2.utrum.io", port: 10088, mode: "tcp",
       }
     ],
   }
