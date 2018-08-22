@@ -1,6 +1,6 @@
 # LibWallet
 
-Multi-crypto library for wallets.
+Multi-currency library for wallets.
 
 #### Build Setup
 
