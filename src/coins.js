@@ -9,7 +9,10 @@ const coins = [
     explorer: 'https://insight.bitpay.com',
     electrum: [
       {
-        host: 'btc.electrum.monaize.com', port: 10000, mode: 'tcp',
+        host: 'electrum.hsmiths.com', port: 50001, mode: 'tcp',
+      },
+      {
+        host: 'helicarrier.bauerj.eu', port: 50001, mode: 'tcp',
       },
     ],
   },
@@ -34,7 +37,10 @@ const coins = [
     explorer: 'https://kmd.explorer.supernet.org',
     electrum: [
       {
-        host: 'kmd.electrum.monaize.com', port: 10001, mode: 'tcp',
+        host: 'electrum1.cipig.net', port: 10001, mode: 'tcp',
+      },
+      {
+        host: 'electrum2.cipig.net', port: 10001, mode: 'tcp',
       },
     ],
   },
@@ -86,10 +92,10 @@ const coins = [
     explorer: 'https://explorer.utrum.io/',
     electrum: [
       {
-        host: 'electrum1.utrum.io', port: 10088, mode: 'tcp'
+        host: 'electrum1.utrum.io', port: 10088, mode: 'tcp',
       },
       {
-        host: 'electrum2.utrum.io', port: 10088, mode: 'tcp'
+        host: 'electrum2.utrum.io', port: 10088, mode: 'tcp',
       }
     ],
   }
