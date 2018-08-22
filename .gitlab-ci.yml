@@ -1,0 +1,9 @@
+image: node:alpine
+
+test:
+  before_script:
+    - yarn
+  script:
+    - yarn test
+  tags:
+    - docker
