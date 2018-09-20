@@ -34,7 +34,7 @@ const coins = [
     network: bitcoinjs.networks.komodo,
     fee: 10000,
     path: "m/44'/141'/0'",
-    explorer: 'https://kmd.explorer.supernet.org',
+    explorer: 'https://kmdexplorer.ru',
     electrum: [
       {
         host: 'electrum1.cipig.net', port: 10001, mode: 'tcp',
