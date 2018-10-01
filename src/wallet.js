@@ -90,6 +90,19 @@ class Wallet {
     this.coin = coin;
     this.isTest = isTest;
 
+    if ((coin.ticker == 'OOT' || coin.ticker == 'KMD') && privKeyHex.substr(0, 6) == '-PWIF-') {
+      var WIF = privKeyHex.substr(6).split(',')[0];
+      const version = coin.network.wif;
+      this.privkey = bitcoinjs.ECPair.fromWIF(WIF, this.coin.network);
+      this.address = this.privkey.getAddress();
+      return;
+    }
+
+    if (privKeyHex.substr(0, 6) == '-PWIF-') {
+      privKeyHex = privKeyHex.split(',')[1];
+      console.log('carry on....');
+    }
+
     let privateKeyHexBuf;
     try {
       privKeyHex += '01';
@@ -105,6 +118,7 @@ class Wallet {
       this.privkey = bitcoinjs.ECPair.fromWIF(newWif, bitcoinjs.networks.testnet);
     } else {
       const version = coin.network.wif;
+      //console.log(version);
       const newWif = cs.encode(privateKeyHexBuf, version);
       this.privkey = bitcoinjs.ECPair.fromWIF(newWif, this.coin.network);
     }
