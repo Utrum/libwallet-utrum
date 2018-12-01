@@ -66,6 +66,11 @@ class Wallet {
       txb = new bitcoinjs.TransactionBuilder(this.coin.network, feeRate);
     }
 
+    // add support to kmd rewards (by setting locktime every time)
+    if (this.coin.ticker === 'KMD') {
+      var locktime = Math.round(new Date().getTime()/1000) - 777;
+      txb.setLockTime(locktime);
+    }
     inputs.forEach(input => txb.addInput(input.txId, input.vout));
 
     outputs.forEach((output) => {
