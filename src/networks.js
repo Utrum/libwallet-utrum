@@ -12,6 +12,7 @@ const komodo_nonsapling = {
 const komodo = {
     messagePrefix: '\x19Komodo Signed Message:\n',
     bip44: 141,
+    bech32: 'bc',
     bip32: {
       public: 0x0488b21e,
       private: 0x0488ade4,
