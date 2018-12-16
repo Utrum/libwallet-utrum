@@ -1,4 +1,4 @@
-const komodoac = {
+const komodo_nonsapling = {
   messagePrefix: '\x18Komodo Signed Message:\n',
   bip32: {
     public: 0x0488B21E,
@@ -32,10 +32,10 @@ const komodo = {
     kmdInterest: true,
 }
 
-const monaize = Object.assign({}, komodoac);
+const monaize = Object.assign({}, komodo);
 monaize.messagePrefix = '\x18Monaize Signed Message:\n';
 
-const utrum = Object.assign({}, komodoac);
+const utrum = Object.assign({}, komodo_nonsapling);
 utrum.messagePrefix = '\x18Utrum Signed Message:\n';
 
 module.exports = {
