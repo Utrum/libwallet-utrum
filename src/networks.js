@@ -31,6 +31,7 @@ const komodo = {
     sapling: true,
     saplingActivationTimestamp: 1544835600,
     kmdInterest: true,
+    coin: 'komodo'
 }
 
 const monaize = Object.assign({}, komodo);
