@@ -1,4 +1,4 @@
-const bitcoinjs = require('bitcoinjs-lib');
+const bitcoinjs = require('bitgo-utxo-lib');
 const networks = require('./networks');
 
 bitcoinjs.networks.komodo = networks.komodo;

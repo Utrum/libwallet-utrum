@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bitcoinjs-lib": "^3.3.2",
+    "bitgo-utxo-lib": "^1.2.1",
     "coinselect": "^3.1.11",
     "coinstring": "^2.3.0",
     "electrum-client": "^0.0.5",
