@@ -1,4 +1,4 @@
-/* const komodo = {
+const komodoac = {
   messagePrefix: '\x18Komodo Signed Message:\n',
   bip32: {
     public: 0x0488B21E,
@@ -7,7 +7,7 @@
   pubKeyHash: 0x3c,
   scriptHash: 0x55,
   wif: 0xbc,
-} */
+}
 
 const komodo = {
     messagePrefix: '\x19Komodo Signed Message:\n',
@@ -32,10 +32,10 @@ const komodo = {
     kmdInterest: true,
 }
 
-const monaize = Object.assign({}, komodo);
+const monaize = Object.assign({}, komodoac);
 monaize.messagePrefix = '\x18Monaize Signed Message:\n';
 
-const utrum = Object.assign({}, komodo);
+const utrum = Object.assign({}, komodoac);
 utrum.messagePrefix = '\x18Utrum Signed Message:\n';
 
 module.exports = {
