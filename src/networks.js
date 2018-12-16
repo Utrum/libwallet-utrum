@@ -9,6 +9,7 @@ const komodo_nonsapling = {
   wif: 0xbc,
 }
 
+/*
 const komodo = {
     messagePrefix: '\x19Komodo Signed Message:\n',
     bip44: 141,
@@ -32,16 +33,16 @@ const komodo = {
     saplingActivationTimestamp: 1544835600,
     kmdInterest: true,
     coin: 'komodo'
-}
+} */
 
-const monaize = Object.assign({}, komodo);
-monaize.messagePrefix = '\x18Monaize Signed Message:\n';
+/* const monaize = Object.assign({}, komodo);
+monaize.messagePrefix = '\x18Monaize Signed Message:\n'; */
 
 const utrum = Object.assign({}, komodo_nonsapling);
 utrum.messagePrefix = '\x18Utrum Signed Message:\n';
 
 module.exports = {
-  komodo,
-  monaize,
+  //komodo,
+  //monaize,
   utrum
 }
