@@ -1,10 +1,10 @@
 {
-  "name": "libwallet-mnz",
+  "name": "libwallet-utrum",
   "version": "3.5.0",
   "description": "A MultiCrypto Wallet Management Library",
   "main": "index.js",
   "repository": "git@git-1:dico/libwallet.git",
-  "author": "Maxime Saddok <maxime@monaize.com>",
+  "author": "Maxime Saddok <maxime@monaize.com>, Utrum Foundation <contact@utrum.io>",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
