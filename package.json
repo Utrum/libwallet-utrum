@@ -1,6 +1,6 @@
 {
   "name": "libwallet-utrum",
-  "version": "3.5.0",
+  "version": "4.0.0",
   "description": "A MultiCrypto Wallet Management Library",
   "main": "index.js",
   "repository": "git@git-1:dico/libwallet.git",
