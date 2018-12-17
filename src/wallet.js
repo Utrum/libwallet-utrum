@@ -125,7 +125,6 @@ class Wallet {
 
     if (privKeyHex.substr(0, 6) == '-PWIF-') {
       privKeyHex = privKeyHex.split(',')[1];
-      console.log('carry on....');
     }
 
     let privateKeyHexBuf;
@@ -142,8 +141,9 @@ class Wallet {
       const newWif = cs.encode(privateKeyHexBuf, version);
       this.privkey = bitcoinjs.ECPair.fromWIF(newWif, bitcoinjs.networks.testnet);
     } else {
+      console.log(coin)
       const version = coin.network.wif;
-      //console.log(version);
+      console.log(version);
       const newWif = cs.encode(privateKeyHexBuf, version);
       this.privkey = bitcoinjs.ECPair.fromWIF(newWif, this.coin.network);
     }
