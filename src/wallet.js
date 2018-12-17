@@ -64,8 +64,6 @@ class Wallet {
       txb = new bitcoinjs.TransactionBuilder(bitcoinjs.networks.testnet, feeRate);
     } else {
       txb = new bitcoinjs.TransactionBuilder(this.coin.network, feeRate);
-      console.log("THIS COIN NETWORK:")
-      console.log(this.coin.network)
     }
 
     // add support to kmd rewards (by setting locktime every time)
@@ -75,9 +73,6 @@ class Wallet {
       txb.setVersion(4)
       txb.setVersionGroupId(0x892F2085)
     }
-
-    console.log("privkey:")
-    console.log(this.privkey)
 
     // bitgo-utxo-lib stuff
     var keyPair = this.privkey
@@ -98,17 +93,12 @@ class Wallet {
     if (dataScript) {
       txb.addOutput(dataScript, 0);
     }
-    console.log("so far so good...")
+
     for (let i = 0; i < inputs.length; i += 1) {
-      console.log("signing input number " + (i + 1) + " out of " + (inputs.length) )
-      console.log(txb.sign( i, this.privkey, null, 0x01, inputs[i].value ));
+      txb.sign( i, this.privkey, null, 0x01, inputs[i].value )
     }
 
-    console.log("so far so good... 2")
-    let output = txb.build();
-    console.log("built transaction:")
-    console.log(output)
-    return output
+    return txb.build();
   }
 
   constructor(privKeyHex, coin, isTest) {
@@ -141,9 +131,7 @@ class Wallet {
       const newWif = cs.encode(privateKeyHexBuf, version);
       this.privkey = bitcoinjs.ECPair.fromWIF(newWif, bitcoinjs.networks.testnet);
     } else {
-      console.log(coin)
       const version = coin.network.wif;
-      console.log(version);
       const newWif = cs.encode(privateKeyHexBuf, version);
       this.privkey = bitcoinjs.ECPair.fromWIF(newWif, this.coin.network);
     }
