@@ -64,6 +64,8 @@ class Wallet {
       txb = new bitcoinjs.TransactionBuilder(bitcoinjs.networks.testnet, feeRate);
     } else {
       txb = new bitcoinjs.TransactionBuilder(this.coin.network, feeRate);
+      console.log("THIS COIN NETWORK:")
+      console.log(this.coin.network)
     }
 
     // add support to kmd rewards (by setting locktime every time)
@@ -71,8 +73,20 @@ class Wallet {
       var locktime = Math.round(new Date().getTime()/1000) - 777
       txb.setLockTime(locktime)
       txb.setVersion(4)
+      txb.setVersionGroupId(0x892F2085)
     }
-    inputs.forEach(input => txb.addInput(input.txId, input.vout));
+
+    console.log("privkey:")
+    console.log(this.privkey)
+
+    // bitgo-utxo-lib stuff
+    var keyPair = this.privkey
+    var pk = bitcoinjs.crypto.hash160(keyPair.getPublicKeyBuffer())
+    var spk = bitcoinjs.script.pubKeyHash.output.encode(pk)
+
+    inputs.forEach(
+      input => txb.addInput(input.txId, input.vout, 0xffffffff, spk)
+    );
 
     outputs.forEach((output) => {
       if (!output.address) {
@@ -84,12 +98,17 @@ class Wallet {
     if (dataScript) {
       txb.addOutput(dataScript, 0);
     }
-
+    console.log("so far so good...")
     for (let i = 0; i < inputs.length; i += 1) {
-      txb.sign(i, this.privkey);
+      console.log("signing input number " + (i + 1) + " out of " + (inputs.length) )
+      console.log(txb.sign( i, this.privkey, null, 0x01, inputs[i].value ));
     }
 
-    return txb.build();
+    console.log("so far so good... 2")
+    let output = txb.build();
+    console.log("built transaction:")
+    console.log(output)
+    return output
   }
 
   constructor(privKeyHex, coin, isTest) {
