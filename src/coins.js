@@ -37,7 +37,7 @@ const coins = [
     name: 'utrum',
     network: bitcoinjs.networks.utrum,
     path: "m/44'/141'/0'",
-    fee: 0,
+    fee: 10000,
     explorer: 'https://explorer.utrum.io/',
     electrum: [
       {
@@ -47,7 +47,16 @@ const coins = [
         host: 'electrum2.utrum.io', port: 10088, mode: 'tcp',
       }
     ],
-  }
+  },
+  {
+    ticker: 'ZILLA',
+    name: 'chainzilla',
+    network: bitcoinjs.networks.komodo_nonsapling,
+    path: "m/44'/141'/0'",
+    fee: 10000,
+    explorer: 'https://zilla.explorer.komodo.top/',
+    electrum: [],
+  },
 ];
 
 function getCoin(coin) {
