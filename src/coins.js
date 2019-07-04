@@ -35,7 +35,7 @@ const coins = [
   {
     ticker: 'OOT',
     name: 'utrum',
-    network: bitcoinjs.networks.utrum,
+    network: bitcoinjs.networks.komodo_nonsapling,
     path: "m/44'/141'/0'",
     fee: 10000,
     explorer: 'https://explorer.utrum.io/',

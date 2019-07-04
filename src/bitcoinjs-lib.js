@@ -1,7 +1,8 @@
 const bitcoinjs = require('bitgo-utxo-lib');
 const networks = require('./networks');
 
-bitcoinjs.networks.komodo = networks.komodo;
-bitcoinjs.networks.utrum = networks.utrum;
+Object.keys(networks).forEach( network  => {
+  bitcoinjs.networks[network] = networks[network];
+});
 
 module.exports = bitcoinjs;
