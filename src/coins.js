@@ -61,6 +61,16 @@ const coins = [
     hasHodlProgram: true,
     electrum: [],
   },
+  {
+    ticker: 'DP',
+    name: 'digitalprice',
+    network: bitcoinjs.networks.komodo,
+    path: "m/44'/141'/0'",
+    fee: 10000,
+    explorer: 'https://dp.explorer.komodo.top/',
+    hasHodlProgram: false,
+    electrum: [],
+  },
 ];
 
 function getCoin(coin) {
