@@ -63,7 +63,7 @@ const coins = [
   },
   {
     ticker: 'DP',
-    name: 'DigitalPrice',
+    name: 'digitalprice',
     network: bitcoinjs.networks.komodo,
     path: "m/44'/141'/0'",
     fee: 10000,
