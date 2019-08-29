@@ -59,19 +59,18 @@ class Wallet {
   }
 
   buildTx(inputs, outputs, feeRate, dataScript) {
-    let txb;
-    if (this.isTest && this.coin.ticker === 'BTC') {
-      txb = new bitcoinjs.TransactionBuilder(bitcoinjs.networks.testnet, feeRate);
-    } else {
-      txb = new bitcoinjs.TransactionBuilder(this.coin.network, feeRate);
+    let txb = new bitcoinjs.TransactionBuilder(this.coin.network, feeRate);
+
+    // support overwintered transactions
+    if (this.coin.network.coin === 'zec') {
+      txb.setVersion(4)
+      txb.setVersionGroupId(0x892F2085)
     }
 
     // add support to kmd rewards (by setting locktime every time)
     if (this.coin.ticker === 'KMD') {
       var locktime = Math.round(new Date().getTime()/1000) - 777
       txb.setLockTime(locktime)
-      txb.setVersion(4)
-      txb.setVersionGroupId(0x892F2085)
     }
 
     // bitgo-utxo-lib stuff
