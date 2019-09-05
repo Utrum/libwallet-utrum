@@ -71,6 +71,16 @@ const coins = [
     hasHodlProgram: false,
     electrum: [],
   },
+  {
+    ticker: 'K64',
+    name: 'komodore64',
+    network: bitcoinjs.networks.komodo,
+    path: "m/44'/141'/0'",
+    fee: 10000,
+    explorer: 'https://k64.explorer.dexstats.info/',
+    hasHodlProgram: false,
+    electrum: [],
+  },
 ];
 
 function getCoin(coin) {
