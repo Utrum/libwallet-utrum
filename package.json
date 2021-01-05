@@ -7,7 +7,7 @@
   "author": "Maxime Saddok <maxime@monaize.com>, Utrum Foundation <contact@utrum.io>",
   "license": "MIT",
   "dependencies": {
-    "axios": "0.18.0",
+    "axios": "0.21.1",
     "bitgo-utxo-lib": "1.2.1",
     "coinselect": "3.1.11",
     "coinstring": "2.3.0",
